@@ -1,0 +1,11 @@
+.header {
+    position: sticky;
+    top: 0px;
+    background-color: rgb(37, 37, 37);
+    z-index: 100;
+    .logo {
+        span{
+            color: aqua
+        }
+    }
+}
