@@ -30,7 +30,7 @@ export const RemoveArticle: React.FC<RemoveArticleProps> = ({ article }) => {
     return (
         <>
             <button
-                className="btn btn-outline-danger"
+                className="btn btn-danger"
                 type="button"
                 onClick={() => setShowModal(true)}
             >

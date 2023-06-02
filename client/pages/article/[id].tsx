@@ -17,9 +17,11 @@ function Article({ id }: ArticleProps) {
     }, [id])
     return (
         <MainLayout>
+            <div className="col-8 m-auto">
             {
                 article !== undefined && <ArticleDetiled article={article} />
             }
+            </div>
         </MainLayout>
     )
 }

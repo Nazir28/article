@@ -3,7 +3,15 @@
     max-height: 200px;
     object-fit: contain;
 }
-
+.title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 20px;     /* fallback */
+    max-height: 42px;      /* fallback */
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
 .description {
     overflow: hidden;
     text-overflow: ellipsis;

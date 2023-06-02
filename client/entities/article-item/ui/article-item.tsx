@@ -13,8 +13,8 @@ interface ArticleItemProps {
 export const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
     const router = useRouter()
     return (
-        <div className="col-6 mt-4">
-            <div className="card mb-3 h-100">
+        <div className="col-4 mt-4">
+            <div className="card mb-3 pt-4">
                 {
                     router.pathname === path.PROFILE_ARTICLES && <div className={styles.actions}>
                         <RemoveArticle article={article} />
@@ -32,14 +32,14 @@ export const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
                     </div>
                     <div className="col-12">
                         <div className="card-body">
-                            <h5 className="card-title">
+                            <h5 className={"card-title " + styles.title}>
                                 <Link href={path.ARTICLE + '/' + article.id}>
                                     {article.title}
                                 </Link>
                             </h5>
                             <p className={"card-text " + styles.description}>{article.description}</p>
-                            <div className='d-flex justify-content-between pt-4'>
-                                <p className="card-text">
+                            <div className='d-flex justify-content-between pt-3'>
+                                <p className="card-text mb-0">
                                     <small className="text-body-secondary">Имя автора {article.name}</small>
                                 </p>
                                 <Link href={path.ARTICLE + '/' + article.id}>

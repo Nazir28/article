@@ -14,7 +14,12 @@ export const AddArticles = () => {
     const userId = useAppSelector(state => state.main.userId)
     const dispatch = useAppDispatch()
 
-
+    React.useEffect(() => {
+        setImage(null)
+        setDescription('')
+        setTitle('')
+        setImagePreviewUrl(null)
+    }, [showModal])
     const submitCreateArticleHandler = React.useCallback(async (evt: FormEvent<HTMLFormElement>) => {
         evt.preventDefault()
 
