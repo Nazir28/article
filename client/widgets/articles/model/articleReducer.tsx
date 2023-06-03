@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
 import * as articleAsyncActions from './articleAsyncActions'
 import { IArticle } from '../interfaces'
 export interface ArticleState {
