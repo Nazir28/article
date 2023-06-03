@@ -30,7 +30,6 @@ class UserController {
                 text: queryCreate,
                 values: [name, email, '', password]
             })
-            console.log(user)
             const token = generateJwt(user.rows[0].id, user.rows[0].email, user.rows[0].name);
             res.json({
                 token,

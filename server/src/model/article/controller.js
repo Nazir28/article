@@ -121,7 +121,6 @@ class ArticleController {
                 text: query,
                 values: [req.params.id]
             })
-            console.log(article)
             res.json({
                 status: 200,
                 deleted: true

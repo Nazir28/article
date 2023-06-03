@@ -25,7 +25,6 @@ export const fetchLoginHandler = (builder: any) => {
     builder.addCase(fetchLogin.fulfilled, (state: MainState, action: PayloadAction<any>) => {
         if (action.payload?.status >= 400) {
         } else {
-            console.log(action.payload)
             state.accessToken = action.payload.token
             state.isAuth = true
             cookies.set('access_token', action.payload.token)
@@ -65,7 +64,6 @@ export const fetchRegisterHandler = (builder: any) => {
     builder.addCase(fetchRegister.fulfilled, (state: MainState, action: PayloadAction<any>) => {
         if (action.payload?.status >= 400) {
         } else {
-            console.log(action.payload)
             state.accessToken = action.payload.token
             state.isAuth = true
             cookies.set('access_token', action.payload.token)
@@ -88,7 +86,7 @@ export const fetchRegisterHandler = (builder: any) => {
 export const fetchCheckAuth = createAsyncThunk('main/fetchCheckAuth', async (_, { rejectWithValue }) => {
     try {
         const res = await api.get('/user/check')
-        console.log(res)
+        
         if (res.status >= 400)
             return {
                 status: res.status
@@ -106,7 +104,6 @@ export const fetchCheckAuthHandler = (builder: any) => {
     builder.addCase(fetchCheckAuth.pending, (state: MainState, action: PayloadAction<any>) => {
     })
     builder.addCase(fetchCheckAuth.fulfilled, (state: MainState, action: PayloadAction<any>) => {
-        console.log(action.payload)
         if (action.payload?.status >= 400 || action.payload === undefined) {
 
             state.isAuth = false
