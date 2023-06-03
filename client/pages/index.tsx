@@ -1,10 +1,6 @@
-import Head from 'next/head'
 import React from 'react'
-import { api } from '@/shared/utils/api'
-import { GetServerSideProps } from 'next'
 import { MainLayout } from '@/app/layout'
 import { Articles, articleActions } from '@/widgets/articles'
-import { IArticle } from '@/widgets/articles/interfaces'
 import { useAppDispatch, useAppSelector } from '@/app/hooks/redux'
 
 
@@ -21,7 +17,7 @@ const Index: React.FC<IndexProps> = () => {
 
     return (
         <MainLayout>
-            <h1 className='mt-5 mb-5 col-10'>На этом сайте пользователи могут обмениваться знаниями и опытом в области технологий</h1>
+            <h1 className='mt-5 mb-3 col-10'>На этом сайте пользователи могут обмениваться знаниями и опытом в области технологий</h1>
             {
                 articles !== undefined ? <Articles articles={articles} /> : 'loading...'
             }
